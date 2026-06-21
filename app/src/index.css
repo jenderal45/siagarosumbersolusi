@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 42 60% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 42 60% 95%;
+    --secondary-foreground: 42 60% 30%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 42 60% 95%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 42 60% 55%;
+    --radius: 0.5rem;
+    --goldenrod: #D4A843;
+    --goldenrod-light: #F5E6C3;
+    --goldenrod-muted: #C4A055;
+    --goldenrod-deep: #8B6914;
+    --near-black: #222222;
+    --medium-gray: #6B6B6B;
+    --light-yellow: #FAF5E6;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-golden {
+    background: linear-gradient(135deg, #C4A055 0%, #8B6914 100%);
+  }
+
+  .gradient-golden-soft {
+    background: linear-gradient(180deg, #C4A055 0%, #A08230 50%, #8B6914 100%);
+  }
+
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .text-golden {
+    color: var(--goldenrod);
+  }
+
+  .bg-golden {
+    background-color: var(--goldenrod);
+  }
+
+  .bg-light-yellow {
+    background-color: var(--light-yellow);
+  }
+
+  .card-shadow {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .card-shadow-hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  .btn-primary {
+    @apply bg-[#D4A843] text-white font-semibold px-6 py-3 rounded transition-all duration-200;
+  }
+
+  .btn-primary:hover {
+    background-color: #B88D2E;
+  }
+
+  .btn-outline {
+    @apply border border-[#D4A843] text-[#D4A843] font-medium px-6 py-3 rounded transition-all duration-200;
+  }
+
+  .btn-outline:hover {
+    @apply bg-[#D4A843] text-white;
+  }
+
+  .btn-outline-white {
+    @apply border border-white text-white font-medium px-6 py-3 rounded transition-all duration-200;
+  }
+
+  .btn-outline-white:hover {
+    @apply bg-white text-[#D4A843];
+  }
+
+  .label-category {
+    @apply text-xs font-semibold tracking-[0.1em] uppercase;
+  }
+}
+
+@layer utilities {
+  .animation-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animation-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animation-counter {
+    animation: counterUp 1.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4A843;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B88D2E;
+}
